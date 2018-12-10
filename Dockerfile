@@ -1,5 +1,7 @@
 From openjdk:8-jdk
 
+LABEL Mr.V
+
 # sdk-tools版本，版本号在以下页面的底部获取。
 # https://developer.android.com/studio/index.html
 ARG SDK_TOOLS_VERSION=4333796
