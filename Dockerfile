@@ -1,6 +1,6 @@
 From openjdk:8-jdk
 
-LABEL Mr.V
+LABEL maintainer="Mr.V"
 
 # sdk-tools版本，版本号在以下页面的底部获取。
 # https://developer.android.com/studio/index.html
