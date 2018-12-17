@@ -35,4 +35,4 @@ RUN apt-get update -y && apt-get install -y bash python3 git openssh-client && \
 # 指定运行用户
 USER 1000270000
 
-CMD [ "echo", "done" ]
+CMD [ "echo", "$ANDROID_HOME" ] 
