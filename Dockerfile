@@ -13,7 +13,7 @@ WORKDIR /project
 # 设置ANDROID_HOME环境变量，指定Android SDK的路径。
 ENV ANDROID_HOME /project/sdk
 
-# 执行Android SDK的下载安装操作
+# 执行Android SDK的下载安装操作。
 RUN mkdir -p ${ANDROID_HOME} && \
     chgrp -Rf root /project && \
     chmod -Rf g+w /project && \
@@ -28,11 +28,11 @@ RUN mkdir -p ${ANDROID_HOME} && \
     $ANDROID_HOME/tools/bin/sdkmanager --no_https "extras;google;m2repository" && \
     $ANDROID_HOME/tools/bin/sdkmanager --no_https "extras;android;m2repository"
 
-# 安装后续构建的必要工具，清理缓存，预先创建known_hosts。
+# 安装后续构建的必要工具，清理缓存。
 RUN apt-get update -y && apt-get install -y bash python3 git openssh-client && \
     rm -rf /var/lib/apt/lists/*
     
 # 指定运行用户
 USER 1000270000
 
-CMD [ "echo", "$ANDROID_HOME" ] 
+CMD [ "echo", "$ANDROID_HOME" ]
