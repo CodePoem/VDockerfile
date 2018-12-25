@@ -31,8 +31,5 @@ RUN mkdir -p ${ANDROID_HOME} && \
 # 安装后续构建的必要工具，清理缓存。
 RUN apt-get update -y && apt-get install -y bash python3 git openssh-client && \
     rm -rf /var/lib/apt/lists/*
-    
-# 指定运行用户
-USER 1000270000
 
-CMD [ "echo", "$ANDROID_HOME" ]
+CMD [ "echo", "Android Docker~" ]
