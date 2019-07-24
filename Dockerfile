@@ -29,10 +29,10 @@ RUN mkdir -p ${ANDROID_HOME} && \
     $ANDROID_HOME/tools/bin/sdkmanager --no_https "extras;android;m2repository"
 
 # 挂载gradle缓存目录
-VOLUME /root/.gradle
+VOLUME ["/root/.gradle"]
 
 # 安装后续构建的必要工具，清理缓存。
 RUN apk update -y && apk add -y bash python3 git openssh-client && \
     rm -rf /var/lib/apt/lists/*
 
-CMD [ "echo", "Android Docker~" ]
+CMD ["tail", "-f", "/dev/null"]
